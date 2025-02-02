@@ -3,6 +3,7 @@ import fakeData from '../../fakeData/products.json';
 import './Shop.css'
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
+import { flushSync } from 'react-dom';
 const Shop = () => {
     const first10 = fakeData.slice(0,10);
     const [products,setProduct] =useState(first10);
@@ -20,6 +21,7 @@ const Shop = () => {
                 {
                 products.map(
                     product=><Product
+                    showToCart={true}
                     handleAddProduct={handleAddProduct} 
                     product={product}></Product>
                 )
