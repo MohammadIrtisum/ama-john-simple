@@ -6,6 +6,7 @@ import Cart from '../Cart/Cart';
 import { flushSync } from 'react-dom';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/dataBaseManager';
 import { use } from 'react';
+import { Link } from 'react-router-dom';
 const Shop = () => {
     const first10 = fakeData.slice(0,10);
     const [products,setProduct] =useState(first10);
@@ -65,6 +66,9 @@ const Shop = () => {
         </div>
         <div className="cart-container">
             <Cart cart={cart}></Cart>
+              <Link to="/review">
+                <button className="main-button">Review Order</button>
+              </Link>
         </div>
         </div>
     );
